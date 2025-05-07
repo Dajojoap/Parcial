@@ -1,0 +1,63 @@
+#problema 1
+#este programa sirve para leer numeros enteros, clasificarlos entre numeros positivos y negativos,
+#este debe sumar los positivos y los pares.
+
+#definir el bloque para la suma total
+s_p_p = 0
+
+#leer 5 numeros por consola
+for i in range(5):
+    numero = int(input(f"Ingrese el valor {i+1}: ")) #el for es para la cantidad maxima de datos a ingresar
+    #numero es el valor que se le va a dar a el dato ingresado por consola
+    
+    #verifique si el número es positivo y par
+    if numero > 0 and numero % 2 == 0: #> 0 se usa para verrificar si el numero es mayor a 0, % 2 == 0 para ver si es par
+        s_p_p += numero #aqui se hace la suma de todos los que sean pares y positivos
+
+#print muestra en consola la suma total de los pares y positivos
+print(f"El resultado de sumar los números positivos y pares es: {s_p_p}")
+
+
+#problema 2
+#clasificacion de edad
+
+Edad=int(input("ingrese aqui su edad en numeros: "))
+
+#la siguente barra de condicionales lee el numero ingresado por consola y lo clasifica segun su valor
+#print sirve para mostrar lo que en consola (niño, adulto etc) teniendo en cuenta el numero que ingresó
+if Edad > 1 and Edad <=13:  #si esta entre 1 y 13 es un niño
+    print(f"Es un niño")    
+elif Edad > 13 and Edad <= 18:  #si es mayor a 13 pero menor o igual a 18 es un adolescente
+    print(f"es un adolescente")
+elif Edad > 18 and Edad <= 59:  #si es mayor a 18 pero menor o igual a 59 es un adulto
+    print(f"es un adulto")   
+elif Edad > 60: #si es mayor a 60 es un adulto mayor
+    print(f"es un adulto mayor") 
+else:
+    print("Ingrese una edad valida (mayor a 0).") #si la edad no cae entre el rango de mayor a 1 hasta adelante, llega aqui
+
+#problema 3
+#conteo de vocales en una palabra
+
+def conteo_vocales(palabra):
+    #Definir las vocales en minúscula y mayúscula
+    vocales = "aeiouAEIOU"
+    contador = 0
+
+    # Recorrer cada letra de la palabra
+    for letra in palabra:
+        if letra in vocales:
+            contador += 1
+
+    return contador
+
+# Solicitar al usuario que ingrese una palabra
+palabra_usuario = input("Por favor, ingresa una palabra (sin espacios): ")
+
+# Verificar que la entrada no contenga espacios
+if " " in palabra_usuario:
+    print("La palabra no debe contener espacios.")
+else:
+    # Llamar a la función y mostrar el resultado
+    resultado = conteo_vocales(palabra_usuario)
+    print(f"La palabra '{palabra_usuario}' tiene {resultado} vocales.")
